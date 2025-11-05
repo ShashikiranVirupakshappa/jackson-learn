@@ -1,9 +1,6 @@
 package com.javabro;
 
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.annotation.JsonRawValue;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.annotation.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,14 +12,16 @@ import java.util.Map;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-//@JsonPropertyOrder({"holderName", "id"})
+//@JsonPropertyOrder({"holderName", "id"})       --- specify the order of property during serialization process
+//@JsonPropertyOrder(alphabetic = true/false)    --- order of property during serialization process is alphabetic if set to true be default it is false or defined order of entity
+@JsonRootName(value = "bankAccountDetails")
 public class BankAccount {
     private Long id;
     //@JsonValue
     // --- by this annotation, we will get only the value associated to this property/attribute for that entity during JSON serialization in output file
     private String holderName;
-    @JsonAnyGetter(enabled = false)
+    //@JsonAnyGetter(enabled = false)
     private Map<String, String> properties;
-    @JsonRawValue
+    //@JsonRawValue
     private String json;
 }

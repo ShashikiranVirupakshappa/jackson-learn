@@ -8,6 +8,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import java.io.File;
 import java.io.IOException;
@@ -55,7 +56,7 @@ public class JacksonJSONHandsOn {
                     System.out.println(fieldName + ": " + value);
                 }
             }
-
+            JsonNode objectNode = objectMapper.createObjectNode();
             JsonNode UserDTORootNode = objectMapper.readTree(new File("src/main/resources/UserDTO.json"));
             JsonNode userNameJSONNode = UserDTORootNode.get("userName");
             System.out.println("userNameJSONNode ======> "+userNameJSONNode.asText());

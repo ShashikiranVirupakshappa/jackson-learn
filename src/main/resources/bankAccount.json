@@ -1,1 +1,1 @@
-"shashi"
+{"id":1,"holderName":"shashi","properties":{"key1":"value1","key4":"value4","key3":"value3","key2":"value2"},"json":"{\n    \"id\": 1,\n    \"firstName\": \"shashi\",\n    \"lastName\": \"kiran\",\n    \"userName\": \"shash\",\n    \"password\": \"shash\"\n}\n"}
